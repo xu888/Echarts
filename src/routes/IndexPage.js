@@ -3,6 +3,12 @@ import React, { Component } from 'react'
 import styles from './IndexPage.css';
 
 class IndexPage extends Component {
+  constructor() {
+    super()
+    this.state = {
+      x: '10'
+    }
+  }
   render() {
     return (
       <div className={styles.container}>
