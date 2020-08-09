@@ -5,18 +5,19 @@ import styles from './IndexPage.css';
 // 引入 ECharts 主模块
 import echarts from 'echarts/lib/echarts';
 // 引入雷达图
-import  'echarts/lib/chart/radar';
+// import  'echarts/lib/chart/radar';
 // 引入提示框和标题组件
-import 'echarts/lib/component/tooltip';
+// import 'echarts/lib/component/tooltip';
 //引入title
-import 'echarts/lib/component/title';
+// import 'echarts/lib/component/title';
 //引入图例
-import 'echarts/lib/component/legend';
+// import 'echarts/lib/component/legend';
 import ReactEcharts from 'echarts-for-react';
 const mytextStyle = {
   color: "#333",                //文字颜色
   fontStyle: "normal",         //italic斜体  oblique倾斜
   fontWeight: "normal",        //文字粗细bold   bolder   lighter  100 | 200 | 300 | 400...
+  // fontFamily:"sans-serif",   //字体系列
   fontSize: 12,                //字体大小
 };
 
@@ -31,14 +32,14 @@ class IndexPage extends Component {
 
 
   /**
-   * @description 配置图表
-   * @returns 
-   * @memberof EchartsRadar
-   */
+     * @description 配置图表
+     * @returns 
+     * @memberof EchartsRadar
+     */
   getOption() {
     return {
       title: {
-        text: '111111111'
+        text: ''
       },
       //点击提示标签
       // tooltip: {},
@@ -180,11 +181,11 @@ class IndexPage extends Component {
     };
   }
   /**
-   * @description 雷达图选中区域点击事件和外部显示标签点击事件
-   * @param {any} param 
-   * @param {any} echarts 
-   * @memberof EchartsRadar
-   */
+ * @description 雷达图选中区域点击事件和外部显示标签点击事件
+ * @param {any} param 
+ * @param {any} echarts 
+ * @memberof EchartsRadar
+ */
   onChartClick(param, echarts) {
     console.log(param)
   }
@@ -196,6 +197,12 @@ class IndexPage extends Component {
    */
   onChartLegendselectchanged(param, echarts) {
     console.log(param)
+  }
+  componentWillReceiveProps(nextProps) {
+  }
+  componentWillMount() {
+  }
+  componentDidMount() {
   }
   render() {
     let onEvents = {
