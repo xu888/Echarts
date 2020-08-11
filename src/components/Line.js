@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-export class Tu1 extends Component {
+class Line extends Component {
     render() {
         return (
             <div>
-                <h1>131231232132</h1>
+                <h1>折线图</h1>
             </div>
         )
     }
 }
 
-export default Tu1
+export default Line

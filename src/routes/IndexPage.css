@@ -8,13 +8,17 @@ h2{
     margin: 0;
     padding: 0;
 }
-.echartsRadar{
-    display: flex;
-    justify-content: center;
-    height: 400px;
-}
 .echartsPie{
     display: flex;
     justify-content: center;
     height: 280px;
 }
+.btn{
+    text-align: center;
+}
+
+button{
+    margin: 0 20px!important;
+    width: 80px;
+}
+

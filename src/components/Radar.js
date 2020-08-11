@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-import styles from './IndexPage.css';
+import styles from './Radar.css';
 // import '../scss/echartsRadar.scss';//引入组件依赖样式
 // 引入 ECharts 主模块
 import echarts from 'echarts/lib/echarts';
@@ -22,7 +22,7 @@ const mytextStyle = {
 };
 
 
-class IndexPage extends Component {
+class Radar extends Component {
   constructor() {
     super()
     this.state = {
@@ -230,4 +230,4 @@ class IndexPage extends Component {
 
 
 
-export default IndexPage
+export default Radar
