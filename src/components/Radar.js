@@ -1,7 +1,5 @@
 
 import React, { Component } from 'react'
-import styles from './Radar.css';
-// import '../scss/echartsRadar.scss';//引入组件依赖样式
 // 引入 ECharts 主模块
 import echarts from 'echarts/lib/echarts';
 // 引入雷达图
@@ -22,11 +20,11 @@ const mytextStyle = {
 };
 
 
+// 雷达图
 class Radar extends Component {
   constructor() {
     super()
     this.state = {
-      x: '10'
     }
   }
 
@@ -36,7 +34,7 @@ class Radar extends Component {
      * @returns 
      * @memberof EchartsRadar
      */
-  getOption() {
+  getOption = () => {
     return {
       title: {
         text: ''
@@ -198,24 +196,13 @@ class Radar extends Component {
   onChartLegendselectchanged(param, echarts) {
     console.log(param)
   }
-  componentWillReceiveProps(nextProps) {
-  }
-  componentWillMount() {
-  }
-  componentDidMount() {
-  }
   render() {
     let onEvents = {
       'click': this.onChartClick.bind(this),
       'legendselectchanged': this.onChartLegendselectchanged.bind(this)
     }
     return (
-      // <div className={styles.container}>
-
-      //   <h2 className={styles.title}>欢迎来到echarts小课堂</h2>
-
-      // </div>
-      <div className={styles.echartsRadar}>
+      <div  style={{ height: '400px', padding: '20px' }}>
         <ReactEcharts
           option={this.getOption()}
           notMerge={true}

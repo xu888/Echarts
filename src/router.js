@@ -17,21 +17,25 @@ const routes = [
     key: 'IndexPage',
     component: IndexPage
   },
+  // 饼图
   {
     path: '/Pie',
     key: 'Pie',
     component: Pie
   },
+  // 柱状图
   {
     path: '/Bar',
     key: 'Bar',
     component: Bar
   },
+  // 折线图
   {
     path: '/Line',
     key: 'Line',
     component: Line
   },
+  // 雷达图
   {
     path: '/Radar',
     key: 'Radar',
@@ -51,6 +55,8 @@ function RouterConfig({ history }) {
     </HashRouter>
   );
 }
+
+
 
 export default RouterConfig;
 
