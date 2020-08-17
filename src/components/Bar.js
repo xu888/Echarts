@@ -20,31 +20,45 @@ export class Bar extends Component {
                 x: 'center'
             },
             tooltip: {
-                // trigger 设置触发类型，默认数据触发，可选值：'item' ¦ 'axis'
+                // trigger 设置触发类型，默认数据触发，可选值：'item' ¦ 'axis',坐标轴触发，主要在柱状图，折线图等会使用类目轴的图表中使用。
                 trigger: 'axis',
-                // 指示器类型。 'line' | 'shadow' | 'none' | 'cross'
+                // 指示器类型。 'line' | 'shadow' | 'none' | 'cross',默认是line
                 axisPointer: {
-                    type: 'shadow'
-                }
+                    // type: 'shadow',
+                    type: 'cross', // 只有type='cross' 默认显示标签名
+                    label: {
+                        // show:true,
+                        color: 'red',
+                        fontSize: 20,
+                        // 数值的小数点精度。默认根据当前轴的值自动判断。也可以指定如 2 表示保留两位小数
+                        precision: 0
+                        // ...坐标轴指示器的文本字体 颜色 背景 边框等都可以在此处进行修改
+                    }
+                },
             },
             // 图例
             legend: {
                 data: ['2011年', '2012年'],
                 x: 'right'
-
             },
             // 绘图网格 
             grid: {
+                // 是否显示直角坐标系网格 默认false
+                show: true,
                 // 组件离容器的距离,可选值：'百分比'¦ {number}（单位px）
                 left: '3%',
                 right: '4%',
                 bottom: '3%',
                 // 区域是否包含坐标轴,默认false
-                containLabel: true
+                containLabel: true,
+                // 宽度 高度自适应
+                //  show:true才生效
+                borderColor: 'red'
             },
             //是否启用拖拽重计算特性，默认关闭(即值为false)  
             // calculable: true,
             xAxis: {
+                // 是否显示x轴
                 show: true,
                 /*
                 坐标轴类型。 'value' 数值轴，适用于连续数据。
@@ -57,14 +71,25 @@ export class Bar extends Component {
                 name: '人口数',
                 // 名称显示位置，默认为end，可选 'start' | 'middle' | 'center' | 'end'
                 nameLocation: 'end',
+                // 坐标轴名称的文字样式  常用文字样式都可进行设置
+                nameTextStyle: {
+                    fontSize: 16,
+                },
                 // 坐标轴名称与轴线之间的距离
                 nameGap: 20,
+                // 是否是反向坐标轴 设置为true后会从右侧开始显示
+                // inverse:true,
                 // x坐标轴刻度标签的相关设置。
                 axisLabel: {
                     textStyle: {
                         color: '#000',  //更改横坐标轴文字颜色
                         fontSize: 14     //更改坐标轴文字大小
                     },
+
+                    // 官方文档显示在这里写，尝试后发现不生效
+                    // color: '#a00',  //更改横坐标轴文字颜色
+                    // fontSize: 34,    //更改坐标轴文字大小
+
                     // 刻度标签的内容格式器，支持字符串模板和回调函数两种形式
                     formatter: '{value} (万)',
 
@@ -83,11 +108,9 @@ export class Bar extends Component {
             yAxis: {
                 type: 'category',
                 data: ['巴西', '印尼', '美国', '印度', '中国', '世界人口'],
-                 //分隔区域，默认不显示  
-                 splitArea: {show: true} 
+                //分隔区域，默认不显示  
+                splitArea: { show: true }
             },
-            // 类目轴（type: 'category'）中有效
-            // data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
             series: [
                 {
                     name: '2011年',
