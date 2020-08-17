@@ -8,19 +8,19 @@ class IndexPage extends Component {
     super()
   }
   // 打开饼图
-  openPie = () => {
+  _openPie = () => {
     window.open('http://localhost:8000/#/Pie');
   }
   // 打开柱状图
-  openBar = () => {
+  _openBar = () => {
     window.open('http://localhost:8000/#/Bar');
   }
   // 打开折线图
-  openLine = () => {
+  _openLine = () => {
     window.open('http://localhost:8000/#/Line');
   }
   // 打开雷达图
-  openRadar = () => {
+  _openRadar = () => {
     window.open('http://localhost:8000/#/Radar');
   }
   render() {
@@ -29,10 +29,10 @@ class IndexPage extends Component {
       <div className={styles.container}>
         <h2 className={styles.title}>欢迎来到echarts小课堂</h2>
         <div className={styles.btn}>
-          <Button onClick={this.openPie}>饼图</Button>
-          <Button onClick={this.openBar}>柱状图</Button>
-          <Button onClick={this.openLine}>折线图</Button>
-          <Button onClick={this.openRadar}>雷达图</Button>
+          <Button onClick={this._openPie}>饼图</Button>
+          <Button onClick={this._openBar}>柱状图</Button>
+          <Button onClick={this._openLine}>折线图</Button>
+          <Button onClick={this._openRadar}>雷达图</Button>
         </div>
       </div>
     )
