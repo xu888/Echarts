@@ -37,7 +37,9 @@ class Radar extends Component {
   getOption = () => {
     return {
       title: {
-        text: ''
+        text: '投诉内容分类',
+        left:'center',
+        padding: 10,
       },
       //点击提示标签
       // tooltip: {},
@@ -57,6 +59,7 @@ class Radar extends Component {
         //图例文字样式设置
         textStyle: mytextStyle
       },
+      // 雷达图坐标系组件，只适用于雷达图
       radar: {
         //雷达图绘制类型，支持 'polygon' 和 'circle' [ default: 'polygon' ]
         shape: 'polygon',
@@ -66,6 +69,7 @@ class Radar extends Component {
         //指示器名称和指示器轴的距离。[ default: 15 ]
         nameGap: 5,
         triggerEvent: true,
+        // 雷达图每个指示器名称的配置项。
         name: {
           textStyle: {
             color: '#999',
@@ -202,7 +206,7 @@ class Radar extends Component {
       'legendselectchanged': this.onChartLegendselectchanged.bind(this)
     }
     return (
-      <div  style={{ height: '400px', padding: '20px' }}>
+      <div  style={{ height: '600px', padding: '20px' }}>
         <ReactEcharts
           option={this.getOption()}
           notMerge={true}

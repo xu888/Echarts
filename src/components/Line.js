@@ -15,6 +15,10 @@ class Line extends Component {
     // 获取图表配置
     getOption = () => {
         return {
+            title:{
+                text:'近七天人流量分析',
+                left:'center'
+            },
             tooltip: {
                 trigger: 'axis',
                 axisPointer: {
@@ -89,11 +93,20 @@ class Line extends Component {
             },
             series: [{
                 name: '人流量分析',
+                // 当只有一个轴为类目轴（axis.type 为 'category'）的时候,data里面的数据与 xAxis.data 一一对应。
                 data: [3350, 1600, 2500, 3300, 2100, 2200, 3000],
                 type: 'line',
+                // 是否平滑曲线显示。true开启 false关闭 ，0-1，越小越接近折线，true相当于0.5
                 smooth: true,
+                // 标记的图形 'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow', 'none'
+                symbol:'circle',
+                // 是否显示 symbol标记图形, 
                 showSymbol: false,
-                hoverAnimation: true,
+                // 标记的大小 10 | [20,10]宽高
+                symbolSize:10,
+                // 是否开启 hover 在拐点标志上的提示动画效果。
+                hoverAnimation: false,
+                // 区域填充样式。
                 areaStyle: {
                     color: {
                         type: 'linear',
@@ -110,10 +123,14 @@ class Line extends Component {
                     },
                     opacity: 0.3
                 },
+                // 线条样式。
                 lineStyle: {
                     normal: {
                         width: 1,
-                        color: 'rgba(31,180,255,1)'
+                        // 'solid'  'dashed'  'dotted'
+                        type:'dashed',
+                        color: 'rgba(31,180,255,1)',
+                        opcipty:0.5
                     }
 
                 }
